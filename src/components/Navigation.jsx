@@ -5,7 +5,7 @@ import { ThemeContext } from "./ThemeContext";
 const Navigation = () => {
   const { theme, toggle, dark } = useContext(ThemeContext);
   return (
-    <div className="bg-slate-500 text-white ">
+    <div className="bg-slate-500 text-white">
       <nav
         style={{ backgroundColor: theme.backgroundColor, color: theme.color }}
       >
