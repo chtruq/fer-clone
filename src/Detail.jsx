@@ -1,9 +1,16 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Players } from './shared/ListOfPlayers'; 
+import { useState } from 'react';
+import { Icon } from 'react-materialize'
+import ModalCase from './components/ModalCase';
+
+
 
 
 const Detail = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
 
     const userName = useParams();
     const player = Players.find(obj => {
@@ -13,6 +20,7 @@ const Detail = () => {
   
 
   return (
+    
     <div className='container mx-auto'>
      <div className='product-card w-full'>
     	<div className='badge'>{player.name}</div>
@@ -24,6 +32,11 @@ const Detail = () => {
       		<div className='product-price'>Market value: € {cost}</div>
       		<p>{player.info}</p>
       		<div className='product-bottom-details'></div>
+          <Link onClick={() => setIsOpen(true)} className="btn-floating halfway-fab waves-effect waves-light red">
+                  <Icon>ondemand_video</Icon>
+                  {isOpen && <ModalCase setIsOpen={setIsOpen} player={player} />}
+          </Link>
+
     	</div>
   </div>
 </div>

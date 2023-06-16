@@ -1,9 +1,11 @@
 import React from 'react'
 import {Players} from './shared/ListOfPlayers';
 import { Link } from 'react-router-dom'
+import { Icon, CardTitle, Row, Col, Card, Container } from 'react-materialize'
 const Player = () => {
   return (
-    <div className='container grid grid-cols-2 gap-3 place-content-around flex justify-around mx-auto'>
+
+     <div className='container grid grid-cols-2 gap-3 place-content-around flex justify-around mx-auto'>
         {Players.map((player)=>(
            <div className='column'>
            <div className='card w-full' >
@@ -16,7 +18,9 @@ const Player = () => {
            </div>
          </div>
         ))}
-    </div>
+    </div> 
+
+
 
 
   )
